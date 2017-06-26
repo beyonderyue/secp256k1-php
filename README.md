@@ -7,8 +7,8 @@ Readme for signature verification and sign function for PHP (secp256k1)
 参考：https://github.com/Bit-Wasp/secp256k1-php 注意PHP5请用v0.0分支，PHP7请用v0.1分支
 
 ### 1 安装 sha3 php extension
-参考：https://github.com/tml/php-sha3
-Please use 'git clone https://github.com/tml/php-sha3'   !!!!!!
+参考：https://github.com/tml/php-sha3   
+Please use 'git clone https://github.com/tml/php-sha3'   否则和Java端算的不一致
 
 ### 2 验签demo代码
 
@@ -28,7 +28,7 @@ $serialized = '';
 $compress = false;
 secp256k1_ec_pubkey_serialize($context, $serialized, $pubKey, $compress);
 $A = bin2hex($serialized);
-$B = substr($A, 2, 128);
+$B = substr($A, 2, 128);//要去掉头两位，否则和Java端不一致
 $pubkeyH = sha3(hex2bin($B), 256);
 $pubkeyNative = substr($pubkeyH, 24, 40);//这个公钥是本地根据服务器签名和服务器返回的消息计算出来的
 if (strcmp($pubKeyFromServer, $pubkeyNative) == 0) {//如果本地计算的公钥和服务器返回的公钥一致就说明签名正确
