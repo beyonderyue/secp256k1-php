@@ -8,6 +8,7 @@ Readme for signature verification and sign function for PHP (secp256k1)
 
 ### 1 安装 sha3 php extension
 参考：https://github.com/tml/php-sha3
+Please use 'git clone https://github.com/tml/php-sha3'   !!!!!!
 
 ### 2 验签demo代码
 
