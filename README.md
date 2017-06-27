@@ -7,8 +7,8 @@ Readme for signature verification and sign function for PHP (secp256k1)
 参考：https://github.com/Bit-Wasp/secp256k1-php 注意PHP5请用v0.0分支，PHP7请用v0.1分支
 
 ### 1 安装 sha3 php extension
-参考：https://github.com/tml/php-sha3   
-Please use 'git clone https://github.com/tml/php-sha3'   否则和Java端算的不一致
+参考：https://github.com/beyonderyue/php-sha3   
+
 
 ### 2 验签demo代码
 
